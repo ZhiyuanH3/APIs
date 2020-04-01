@@ -35,7 +35,7 @@ def find_pattern(bkg_img, img_tmpl, thrd=0.9, draw_out_img=False):
         #cv.imshow('detected', img_bgr)
         cv.imwrite(pth_img+'detected.png', img_rgb)
         
-    if len(loc) != 0:     
+    if len(loc[0]) != 0:     
         return loc[0][0], loc[1][0] #first x, y
     else:
         return -1
