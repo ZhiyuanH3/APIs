@@ -35,68 +35,18 @@ def find_pattern(bkg_img, img_tmpl, thrd=0.9, draw_out_img=False):
         #cv.imshow('detected', img_bgr)
         cv.imwrite(pth_img+'detected.png', img_rgb)
         
-    return loc[0][0], loc[1][0] #first x, y
-
-
-# In[59]:
-
-
-#pth_img = '/home/brian/Desktop/REWE/opencv/img/'
-#bkg_img = pth_img+'Sc.png'
-#img_tmpl = pth_img+'folder'+'.png'#'looper.png'
-#thrd = 0.9 #0.8 
-
-
-# In[60]:
-
-
-#find_pattern(bkg_img, img_tmpl, 0.8)
-
-
-# In[ ]:
+    if len(loc) != 0:     
+        return loc[0][0], loc[1][0] #first x, y
+    else:
+        return -1
 
 
 
 
+if __name__ == "__main__":
+    pth_img = '/home/brian/Desktop/REWE/opencv/img/'
+    bkg_img = pth_img+'Sc.png'
+    img_tmpl = pth_img+'folder'+'.png'#'looper.png'
 
-# In[33]:
-
-
-
-
-
-# In[53]:
-
-
-
-
-
-# In[35]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
+    print(find_pattern(bkg_img, img_tmpl, 0.8))
 
